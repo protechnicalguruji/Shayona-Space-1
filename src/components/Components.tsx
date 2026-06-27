@@ -73,7 +73,7 @@ export const ProcessStep = ({ number, title }: { number: string, title: string }
 );
 
 export const ContactForm = () => (
-  <section id="contact" className="py-24 px-12 my-24 max-w-4xl mx-auto bg-white rounded-[30px] border border-black/5 shadow-[0_20px_50px_rgba(0,0,0,0.08)]">
+  <section id="contact" className="py-16 px-12 my-16 max-w-4xl mx-auto bg-white rounded-[30px] border border-black/5 shadow-[0_20px_50px_rgba(0,0,0,0.08)]">
     <h2 className="text-5xl font-serif text-center mb-16 text-text-main">Get in Touch</h2>
     <form className="grid grid-cols-1 md:grid-cols-2 gap-8" onSubmit={(e) => e.preventDefault()}>
       <input type="text" placeholder="Name" className="p-5 rounded-xl border border-black/10 bg-[#FDFDFD] shadow-[inset_2px_2px_5px_rgba(0,0,0,0.05),0_1px_2px_rgba(255,255,255,0.8)] focus:outline-none focus:border-accent transition-all" />
