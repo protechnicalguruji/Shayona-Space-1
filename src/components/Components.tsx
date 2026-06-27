@@ -1,12 +1,13 @@
 import { motion } from "motion/react";
 import { ArrowRight, MapPin, CheckCircle, Phone, Mail, Map } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export const Navbar = () => (
   <nav className="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-8 py-6 bg-transparent">
-    <div className="text-2xl font-serif font-bold text-text-main">Shayona Space</div>
+    <Link to="/" className="text-2xl font-serif font-bold text-text-main">Shayona Space</Link>
     <div className="flex gap-8 text-sm font-medium text-text-secondary">
       {["Projects", "Categories", "Process", "Contact"].map((item) => (
-        <a key={item} href={`#${item.toLowerCase()}`} className="hover:text-accent transition-colors">
+        <a key={item} href={`/#${item.toLowerCase()}`} className="hover:text-accent transition-colors">
           {item}
         </a>
       ))}
@@ -17,30 +18,32 @@ export const Navbar = () => (
   </nav>
 );
 
-export const PropertyCard = ({ image, title, location, price }: { image: string, title: string, location: string, price: string }) => (
+export const PropertyCard = ({ id, image, title, location, price }: { id: string, image: string, title: string, location: string, price: string }) => (
   <motion.div
     whileHover={{ y: -10 }}
     className="bg-white rounded-3xl overflow-hidden shadow-sm border border-secondary-bg"
   >
-    <div className="h-64 overflow-hidden">
-      <motion.img 
-        whileHover={{ scale: 1.05 }}
-        transition={{ duration: 0.6 }}
-        src={image} 
-        alt={title} 
-        className="w-full h-full object-cover"
-      />
-    </div>
-    <div className="p-6">
-      <h3 className="text-xl font-serif font-bold mb-2">{title}</h3>
-      <div className="flex items-center text-text-secondary text-sm mb-4">
-        <MapPin size={16} className="mr-1" /> {location}
+    <Link to={`/property/${id}`}>
+      <div className="h-64 overflow-hidden">
+        <motion.img 
+          whileHover={{ scale: 1.05 }}
+          transition={{ duration: 0.6 }}
+          src={image} 
+          alt={title} 
+          className="w-full h-full object-cover"
+        />
       </div>
-      <p className="text-accent font-semibold mb-4">{price}</p>
-      <button className="flex items-center text-sm font-semibold hover:text-accent transition-colors">
-        View Details <ArrowRight size={16} className="ml-2" />
-      </button>
-    </div>
+      <div className="p-6">
+        <h3 className="text-xl font-serif font-bold mb-2">{title}</h3>
+        <div className="flex items-center text-text-secondary text-sm mb-4">
+          <MapPin size={16} className="mr-1" /> {location}
+        </div>
+        <p className="text-accent font-semibold mb-4">{price}</p>
+        <div className="flex items-center text-sm font-semibold hover:text-accent transition-colors">
+          View Details <ArrowRight size={16} className="ml-2" />
+        </div>
+      </div>
+    </Link>
   </motion.div>
 );
 
