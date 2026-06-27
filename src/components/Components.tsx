@@ -8,9 +8,9 @@ export const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-8 py-6 bg-primary-bg/70 backdrop-blur-md border-b border-primary-bg/20 shadow-sm transition-all duration-300">
       <Link to="/" className="text-2xl font-serif font-bold text-text-main z-50">Shayona Space</Link>
-      <div className={`fixed inset-0 bg-primary-bg flex flex-col items-center justify-center gap-8 text-xl font-medium transition-transform ${isOpen ? 'translate-x-0' : 'translate-x-full'} md:static md:translate-x-0 md:bg-transparent md:flex-row md:gap-8 md:text-sm md:font-medium md:text-text-secondary`}>
+      <div className={`fixed inset-0 bg-primary-bg flex flex-col items-center justify-center gap-8 text-xl font-medium transition-transform ${isOpen ? 'translate-x-0' : 'translate-x-full'} md:static md:translate-x-0 md:bg-transparent md:flex-row md:gap-8 md:text-sm md:font-medium md:text-[#1F1F1F]`}>
         {["Projects", "Categories", "Process", "Contact"].map((item) => (
-          <a key={item} href={`/#${item.toLowerCase()}`} onClick={() => setIsOpen(false)} className="hover:text-accent transition-colors">
+          <a key={item} href={`/#${item.toLowerCase()}`} onClick={() => setIsOpen(false)} className="hover:text-accent hover:underline underline-offset-4 transition-all duration-300">
             {item}
           </a>
         ))}
