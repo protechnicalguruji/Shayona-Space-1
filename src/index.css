@@ -5,11 +5,11 @@
   --font-serif: "Playfair Display", serif;
   --font-sans: "Inter", sans-serif;
 
-  --color-primary-bg: #F8F6F2;
-  --color-secondary-bg: #ECE4D8;
-  --color-accent: #B58A4A;
-  --color-text-main: #202020;
-  --color-text-secondary: #666666;
+  --color-primary-bg: #FFFFFF;
+  --color-secondary-bg: #F8F8F8;
+  --color-accent: #C8A96A;
+  --color-text-main: #111111;
+  --color-text-secondary: #6B7280;
 }
 
 body {

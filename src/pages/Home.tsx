@@ -1,4 +1,4 @@
-import { Navbar, PropertyCard, CategoryCard, ProcessStep } from '../components/Components';
+import { Navbar, PropertyCard, CategoryCard, ProcessStep, ContactForm } from '../components/Components';
 import { SearchFilters } from '../components/SearchFilters';
 import { motion } from 'motion/react';
 import { Home as HomeIcon, TreeDeciduous, Building, Tag, Phone, MessageCircle } from 'lucide-react';
@@ -26,19 +26,19 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center text-center">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=2000&auto=format&fit=crop')] bg-cover bg-center">
-          <div className="absolute inset-0 bg-black/30" />
+          <div className="absolute inset-0 bg-black/40" />
         </div>
         <motion.div 
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          className="relative z-10 text-primary-bg px-4"
+          transition={{ duration: 1.2, ease: "easeOut" }}
+          className="relative z-10 text-white px-4"
         >
-          <h1 className="text-5xl md:text-8xl font-serif font-medium mb-6">Find Your Next <br className="hidden md:block" /> Smart Investment.</h1>
-          <p className="text-lg md:text-xl mb-10 max-w-2xl mx-auto px-4">Premium plots, weekend villas and investment opportunities in Ahmedabad.</p>
-          <div className="flex flex-col md:flex-row gap-4 justify-center px-4">
-            <button className="px-8 py-4 bg-accent text-white rounded-full font-medium hover:bg-white hover:text-accent transition-all">Explore Projects</button>
-            <button className="px-8 py-4 bg-white/10 backdrop-blur-sm text-white rounded-full font-medium hover:bg-white hover:text-text-main transition-all">Book Site Visit</button>
+          <h1 className="text-6xl md:text-9xl font-serif font-light mb-8 tracking-tighter">Find Your Next <br className="hidden md:block" /> Smart Investment.</h1>
+          <p className="text-xl md:text-2xl font-light mb-12 max-w-2xl mx-auto px-4 text-gray-200">Premium plots, weekend villas and investment opportunities in Ahmedabad.</p>
+          <div className="flex flex-col md:flex-row gap-6 justify-center px-4">
+            <button className="px-10 py-5 bg-accent text-white rounded-full font-medium text-lg hover:bg-white hover:text-accent transition-all duration-300 shadow-xl">Explore Projects</button>
+            <button className="px-10 py-5 bg-white/20 backdrop-blur-md text-white rounded-full font-medium text-lg hover:bg-white hover:text-black transition-all duration-300 shadow-xl border border-white/20">Book Site Visit</button>
           </div>
         </motion.div>
       </section>
@@ -63,7 +63,7 @@ export default function Home() {
       </section>
 
       {/* Categories */}
-      <section id="categories" className="py-24 px-8 max-w-7xl mx-auto bg-secondary-bg/30 rounded-3xl">
+      <section id="categories" className="py-32 px-8 my-12 max-w-7xl mx-auto bg-secondary-bg/30 rounded-[40px]">
         <h2 className="text-5xl font-serif text-center mb-16">Investment Categories</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <CategoryCard title="Residential Plots" icon={<HomeIcon className="text-accent" />} />
@@ -74,7 +74,7 @@ export default function Home() {
       </section>
 
       {/* Process */}
-      <section id="process" className="py-24 px-8 max-w-7xl mx-auto">
+      <section id="process" className="py-32 px-8 my-12 max-w-7xl mx-auto bg-secondary-bg/30 rounded-[40px]">
         <h2 className="text-5xl font-serif text-center mb-16">Investment Process</h2>
         <div className="flex flex-wrap justify-between gap-8">
             <ProcessStep number="01" title="Discover" />
@@ -85,16 +85,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Contact CTA */}
-      <section id="contact" className="py-24 px-8 bg-text-main text-primary-bg text-center rounded-t-3xl">
-          <h2 className="text-5xl font-serif mb-8">Let's Find Your Perfect Property.</h2>
-          <div className="flex gap-4 justify-center">
-              <button className="flex items-center gap-2 px-8 py-4 bg-accent text-white rounded-full font-medium hover:bg-white hover:text-accent transition-all">
-                  <Phone size={20}/> Call Now
-              </button>
-          </div>
-          <p className="mt-8 text-text-secondary">7016251079 | Ahmedabad</p>
-      </section>
+      {/* Contact Form */}
+      <ContactForm />
 
       {/* Floating CTA */}
       <div className="fixed bottom-8 right-8 z-50 flex flex-col gap-4">
