@@ -1,5 +1,5 @@
 import { Navbar, PropertyCard, CategoryCard, ProcessStep, ContactForm } from '../components/Components';
-import { FAQ, WhyChooseSection, InvestmentCalculator } from '../components/NewComponents';
+import { FAQ, WhyChooseSection, InvestmentCalculator, CTASection, Footer } from '../components/NewComponents';
 import { SearchFilters } from '../components/SearchFilters';
 import { motion } from 'motion/react';
 import { Home as HomeIcon, TreeDeciduous, Building, Tag, Phone, MessageCircle } from 'lucide-react';
@@ -98,6 +98,9 @@ export default function Home() {
 
       {/* Contact Form */}
       <ContactForm />
+
+      <CTASection />
+      <Footer />
 
       {/* Floating CTA */}
       <div className="fixed bottom-8 right-8 z-50 flex flex-col gap-4">

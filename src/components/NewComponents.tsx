@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Plus, Minus, CheckCircle, Target, TrendingUp, Users, ShieldCheck, MapPin } from "lucide-react";
+import { Plus, Minus, CheckCircle, Target, TrendingUp, Users, ShieldCheck, MapPin, Phone, MessageCircle, Mail, Clock } from "lucide-react";
 
 export const FAQ = () => {
   const faqs = [
@@ -100,3 +100,51 @@ export const InvestmentCalculator = () => {
         </section>
     );
 };
+
+export const CTASection = () => (
+    <section className="py-24 bg-[#1F1F1F] text-white text-center px-8">
+        <h2 className="text-5xl font-serif mb-6">Ready to Find Your Perfect Investment?</h2>
+        <p className="text-xl text-gray-400 mb-12 max-w-2xl mx-auto">Let's help you discover the right property in Ahmedabad.</p>
+        <div className="flex flex-wrap justify-center gap-6">
+            <a href="tel:+917016251079" className="px-10 py-5 bg-accent text-white rounded-full font-medium hover:bg-white hover:text-accent transition-all">Call Now</a>
+            <a href="https://wa.me/917016251079" className="px-10 py-5 bg-[#25D366] text-white rounded-full font-medium hover:bg-white hover:text-[#25D366] transition-all">WhatsApp Us</a>
+            <a href="#contact" className="px-10 py-5 bg-white/10 text-white rounded-full font-medium hover:bg-white hover:text-black transition-all border border-white/20">Book Site Visit</a>
+        </div>
+    </section>
+);
+
+export const Footer = () => (
+    <motion.footer initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} className="bg-[#1F1F1F] text-gray-400 pt-20 pb-10 px-8 border-t border-[#333]">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-12 mb-20">
+            <div>
+                <h3 className="text-2xl font-serif text-white mb-6">Shayona Space</h3>
+                <p className="mb-4">Premium real estate consultancy in Ahmedabad, helping you secure the best investment opportunities.</p>
+            </div>
+            <div>
+                <h4 className="text-white font-medium mb-6">Quick Links</h4>
+                <ul className="space-y-3">
+                    {['Home', 'Projects', 'Categories', 'Process', 'FAQ', 'Contact'].map(link => <li key={link}><a href={`#${link.toLowerCase()}`} className="hover:text-accent transition-all">{link}</a></li>)}
+                </ul>
+            </div>
+            <div>
+                <h4 className="text-white font-medium mb-6">Services</h4>
+                <ul className="space-y-3">
+                    {['Residential Plots', 'Weekend Villas', 'Investment Properties', 'New Launch', 'Resale Deals', 'Book Site Visit'].map(link => <li key={link}><a href="#" className="hover:text-accent transition-all">{link}</a></li>)}
+                </ul>
+            </div>
+            <div>
+                <h4 className="text-white font-medium mb-6">Contact</h4>
+                <ul className="space-y-4">
+                    <li className="flex gap-3"><MapPin size={20} /> Ahmedabad</li>
+                    <li className="flex gap-3"><a href="tel:+917016251079" className="hover:text-accent">+91 70162 51079</a></li>
+                    <li className="flex gap-3"><a href="https://wa.me/917016251079" className="hover:text-accent">WhatsApp</a></li>
+                    <li className="flex gap-3"><Clock size={20} /> 9:00 AM - 7:00 PM</li>
+                </ul>
+            </div>
+        </div>
+        <div className="text-center pt-10 border-t border-[#333] text-sm">
+            © 2026 Shayona Space. All Rights Reserved. | <a href="#" className="hover:text-accent">Privacy Policy</a> | <a href="#" className="hover:text-accent">Terms</a>
+            <p className="mt-4">Designed with ❤️ by <a href="#" className="text-white hover:text-accent">Futura Groups</a></p>
+        </div>
+    </motion.footer>
+);
