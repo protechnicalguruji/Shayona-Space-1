@@ -10,7 +10,7 @@ export const FAQ = () => {
   ];
   return (
     <section className="py-20 px-8 bg-[#181818] text-white">
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-3xl mx-auto bg-white/5 p-10 rounded-[28px] border border-white/10">
         <h2 className="text-5xl font-serif text-center mb-16">Frequently Asked Questions</h2>
         <div className="space-y-4">
           {faqs.map((faq, index) => (
@@ -62,9 +62,9 @@ export const WhyChooseSection = () => {
                 <h2 className="text-5xl font-serif text-center mb-16 text-[#111]">Why Choose Shayona Space</h2>
                 <div className="grid md:grid-cols-3 gap-8">
                     {features.map((f, i) => (
-                        <div key={i} className="bg-white p-8 rounded-3xl border border-black/5 hover:border-accent transition-all">
+                        <div key={i} className="bg-white p-8 rounded-[28px] border border-black/[0.08] shadow-[0_10px_30px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] transition-all duration-300 hover:-translate-y-1">
                             <div className="text-accent mb-6">{f.icon}</div>
-                            <h3 className="text-xl font-serif font-medium">{f.title}</h3>
+                            <h3 className="text-xl font-serif font-medium text-text-main">{f.title}</h3>
                         </div>
                     ))}
                 </div>
@@ -91,7 +91,7 @@ export const InvestmentCalculator = () => {
                         <label>Duration: {years} Years</label>
                         <input type="range" min="1" max="20" value={years} onChange={(e) => setYears(Number(e.target.value))} className="w-full accent-accent" />
                     </div>
-                    <div className="bg-[#181818] p-8 rounded-3xl flex flex-col justify-center items-center text-center">
+                    <div className="bg-[#252525]/50 p-8 rounded-[28px] border border-white/5 flex flex-col justify-center items-center text-center">
                         <p className="text-gray-400 mb-2">Estimated Future Value</p>
                         <p className="text-4xl font-serif text-accent">₹{Math.round(futureValue).toLocaleString()}</p>
                     </div>
