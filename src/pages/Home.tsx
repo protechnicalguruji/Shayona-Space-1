@@ -34,9 +34,9 @@ export default function Home() {
           transition={{ duration: 1 }}
           className="relative z-10 text-primary-bg px-4"
         >
-          <h1 className="text-6xl md:text-8xl font-serif font-medium mb-6">Find Your Next <br /> Smart Investment.</h1>
-          <p className="text-xl mb-10 max-w-2xl mx-auto">Premium plots, weekend villas and investment opportunities in Ahmedabad.</p>
-          <div className="flex gap-4 justify-center">
+          <h1 className="text-5xl md:text-8xl font-serif font-medium mb-6">Find Your Next <br className="hidden md:block" /> Smart Investment.</h1>
+          <p className="text-lg md:text-xl mb-10 max-w-2xl mx-auto px-4">Premium plots, weekend villas and investment opportunities in Ahmedabad.</p>
+          <div className="flex flex-col md:flex-row gap-4 justify-center px-4">
             <button className="px-8 py-4 bg-accent text-white rounded-full font-medium hover:bg-white hover:text-accent transition-all">Explore Projects</button>
             <button className="px-8 py-4 bg-white/10 backdrop-blur-sm text-white rounded-full font-medium hover:bg-white hover:text-text-main transition-all">Book Site Visit</button>
           </div>

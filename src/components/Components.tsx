@@ -1,23 +1,29 @@
 import { motion } from "motion/react";
-import { ArrowRight, MapPin, CheckCircle, Phone, Mail, Map } from "lucide-react";
+import { ArrowRight, MapPin, Phone, Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
-import { ReactNode, Key } from "react";
+import { ReactNode, Key, useState } from "react";
 
-export const Navbar = () => (
-  <nav className="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-8 py-6 bg-transparent">
-    <Link to="/" className="text-2xl font-serif font-bold text-text-main">Shayona Space</Link>
-    <div className="flex gap-8 text-sm font-medium text-text-secondary">
-      {["Projects", "Categories", "Process", "Contact"].map((item) => (
-        <a key={item} href={`/#${item.toLowerCase()}`} className="hover:text-accent transition-colors">
-          {item}
-        </a>
-      ))}
-    </div>
-    <button className="px-6 py-2 bg-text-main text-primary-bg text-sm rounded-full hover:bg-accent transition-all">
-      Book Site Visit
-    </button>
-  </nav>
-);
+export const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  return (
+    <nav className="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-8 py-6 bg-transparent">
+      <Link to="/" className="text-2xl font-serif font-bold text-text-main z-50">Shayona Space</Link>
+      <div className={`fixed inset-0 bg-primary-bg flex flex-col items-center justify-center gap-8 text-xl font-medium transition-transform ${isOpen ? 'translate-x-0' : 'translate-x-full'} md:static md:translate-x-0 md:bg-transparent md:flex-row md:gap-8 md:text-sm md:font-medium md:text-text-secondary`}>
+        {["Projects", "Categories", "Process", "Contact"].map((item) => (
+          <a key={item} href={`/#${item.toLowerCase()}`} onClick={() => setIsOpen(false)} className="hover:text-accent transition-colors">
+            {item}
+          </a>
+        ))}
+      </div>
+      <button className="md:hidden z-50" onClick={() => setIsOpen(!isOpen)}>
+        {isOpen ? <X /> : <Menu />}
+      </button>
+      <button className="hidden md:block px-6 py-2 bg-text-main text-primary-bg text-sm rounded-full hover:bg-accent transition-all">
+        Book Site Visit
+      </button>
+    </nav>
+  );
+};
 
 export const PropertyCard = ({ id, image, title, location, price }: { key?: Key, id: string, image: string, title: string, location: string, price: string }) => (
   <motion.div
