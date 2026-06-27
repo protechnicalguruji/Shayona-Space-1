@@ -63,7 +63,7 @@ export default function Home() {
       </section>
 
       {/* Categories */}
-      <section id="categories" className="py-20 px-8 my-10 max-w-7xl mx-auto bg-gradient-to-br from-[#f2f2f2] to-[#e5e5e5] rounded-[40px] border border-black/5 shadow-sm">
+      <section id="categories" className="py-20 px-8 my-10 max-w-7xl mx-auto bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#EFEFEF] to-[#E3E3E3] rounded-[40px] border border-black/5 shadow-[inset_0_2px_4px_rgba(255,255,255,0.5)]">
         <h2 className="text-5xl font-serif text-center mb-16">Investment Categories</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <CategoryCard title="Residential Plots" icon={<HomeIcon className="text-accent" />} />
@@ -74,7 +74,7 @@ export default function Home() {
       </section>
 
       {/* Process */}
-      <section id="process" className="py-20 px-8 my-10 max-w-7xl mx-auto bg-gradient-to-br from-[#f2f2f2] to-[#e5e5e5] rounded-[40px] border border-black/5 shadow-sm">
+      <section id="process" className="py-20 px-8 my-10 max-w-7xl mx-auto bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-[#E3E3E3] to-[#EFEFEF] rounded-[40px] border border-black/5 shadow-[inset_0_2px_4px_rgba(255,255,255,0.5)]">
         <h2 className="text-5xl font-serif text-center mb-16">Investment Process</h2>
         <div className="relative flex flex-wrap justify-between gap-8">
             <div className="absolute top-10 left-0 w-full h-[1px] bg-black/10 hidden md:block" />
