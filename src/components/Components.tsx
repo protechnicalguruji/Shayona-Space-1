@@ -82,5 +82,5 @@ export const ContactForm = () => (
       <textarea placeholder="Message" className="p-5 rounded-xl border border-black/10 bg-[#FDFDFD] shadow-[inset_2px_2px_5px_rgba(0,0,0,0.05),0_1px_2px_rgba(255,255,255,0.8)] focus:outline-none focus:border-accent col-span-full h-40 transition-all" />
       <button type="submit" className="px-10 py-5 bg-text-main text-white rounded-xl font-medium hover:bg-accent transition-all duration-300 col-span-full shadow-[0_10px_20px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_30px_rgba(196,169,106,0.3)]">Send Message</button>
     </form>
-  </section>
+  </section> 
 );

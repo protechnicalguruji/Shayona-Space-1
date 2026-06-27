@@ -1,4 +1,5 @@
 import { Navbar, PropertyCard, CategoryCard, ProcessStep, ContactForm } from '../components/Components';
+import { FAQ, WhyChooseSection, InvestmentCalculator } from '../components/NewComponents';
 import { SearchFilters } from '../components/SearchFilters';
 import { motion } from 'motion/react';
 import { Home as HomeIcon, TreeDeciduous, Building, Tag, Phone, MessageCircle } from 'lucide-react';
@@ -37,13 +38,16 @@ export default function Home() {
           <h1 className="text-6xl md:text-9xl font-serif font-light mb-8 tracking-tighter">Find Your Next <br className="hidden md:block" /> Smart Investment.</h1>
           <p className="text-xl md:text-2xl font-light mb-12 max-w-2xl mx-auto px-4 text-gray-200">Premium plots, weekend villas and investment opportunities in Ahmedabad.</p>
           <div className="flex flex-col md:flex-row gap-6 justify-center px-4">
-            <button className="px-10 py-5 bg-accent text-white rounded-full font-medium text-lg hover:bg-white hover:text-accent transition-all duration-300 shadow-xl">Explore Projects</button>
-            <button className="px-10 py-5 bg-white/20 backdrop-blur-md text-white rounded-full font-medium text-lg hover:bg-white hover:text-black transition-all duration-300 shadow-xl border border-white/20">Book Site Visit</button>
+            <a href="#projects" className="px-10 py-5 bg-accent text-white rounded-full font-medium text-lg hover:bg-white hover:text-accent transition-all duration-300 shadow-xl">Explore Projects</a>
+            <a href="tel:+917016251079" className="px-10 py-5 bg-white/20 backdrop-blur-md text-white rounded-full font-medium text-lg hover:bg-white hover:text-black transition-all duration-300 shadow-xl border border-white/20">Book Site Visit</a>
           </div>
         </motion.div>
       </section>
 
       <SearchFilters onFilter={handleFilter} />
+
+      {/* Why Choose */}
+      <WhyChooseSection />
 
       {/* Featured Projects */}
       <section id="projects" className="py-20 px-8 max-w-7xl mx-auto">
@@ -61,6 +65,9 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      {/* Investment Calculator */}
+      <InvestmentCalculator />
 
       {/* Categories */}
       <section id="categories" className="py-20 px-8 my-10 max-w-7xl mx-auto bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#EFEFEF] to-[#E3E3E3] rounded-[40px] border border-black/5 shadow-[inset_0_2px_4px_rgba(255,255,255,0.5)]">
@@ -86,17 +93,20 @@ export default function Home() {
         </div>
       </section>
 
+      {/* FAQ */}
+      <FAQ />
+
       {/* Contact Form */}
       <ContactForm />
 
       {/* Floating CTA */}
       <div className="fixed bottom-8 right-8 z-50 flex flex-col gap-4">
-        <button className="p-4 bg-[#25D366] text-white rounded-full shadow-lg">
+        <a href="https://wa.me/917016251079" target="_blank" rel="noopener noreferrer" className="p-4 bg-[#25D366] text-white rounded-full shadow-lg">
           <MessageCircle size={24} />
-        </button>
-        <button className="p-4 bg-accent text-white rounded-full shadow-lg">
+        </a>
+        <a href="tel:+917016251079" className="p-4 bg-accent text-white rounded-full shadow-lg">
           <Phone size={24} />
-        </button>
+        </a>
       </div>
     </div>
   );
