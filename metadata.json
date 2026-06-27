@@ -1,0 +1,6 @@
+{
+  "name": "Shayona Space",
+  "description": "Premium luxury real estate consultant in Ahmedabad.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
