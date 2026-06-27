@@ -10,8 +10,9 @@ export const Navbar = () => {
       <Link to="/" className="text-2xl font-serif font-bold text-text-main z-50">Shayona Space</Link>
       <div className={`fixed inset-0 bg-white/95 flex flex-col items-center justify-center gap-8 text-xl font-medium transition-transform ${isOpen ? 'translate-x-0' : 'translate-x-full'} md:static md:translate-x-0 md:bg-transparent md:flex-row md:gap-8 md:text-sm md:font-medium md:text-[#111111]`}>
         {["Projects", "Categories", "Process", "Contact"].map((item) => (
-          <a key={item} href={`/#${item.toLowerCase()}`} onClick={() => setIsOpen(false)} className="hover:text-accent transition-all duration-300">
+          <a key={item} href={`/#${item.toLowerCase()}`} onClick={() => setIsOpen(false)} className="relative hover:text-accent transition-all duration-300 group">
             {item}
+            <span className="absolute left-0 -bottom-1 w-0 h-[1px] bg-accent transition-all duration-300 group-hover:w-full"></span>
           </a>
         ))}
       </div>
@@ -72,13 +73,13 @@ export const ProcessStep = ({ number, title }: { number: string, title: string }
 );
 
 export const ContactForm = () => (
-  <section id="contact" className="py-32 px-12 my-12 max-w-4xl mx-auto bg-secondary-bg/30 rounded-[40px]">
+  <section id="contact" className="py-24 px-12 my-24 max-w-4xl mx-auto bg-white rounded-[40px] border border-black/5 shadow-2xl shadow-black/5">
     <h2 className="text-5xl font-serif text-center mb-16">Get in Touch</h2>
     <form className="grid grid-cols-1 md:grid-cols-2 gap-8" onSubmit={(e) => e.preventDefault()}>
-      <input type="text" placeholder="Name" className="p-5 rounded-2xl border border-black/5 bg-white focus:outline-none focus:border-accent transition-all" />
-      <input type="email" placeholder="Email" className="p-5 rounded-2xl border border-black/5 bg-white focus:outline-none focus:border-accent transition-all" />
-      <input type="tel" placeholder="Phone Number" className="p-5 rounded-2xl border border-black/5 bg-white focus:outline-none focus:border-accent col-span-full transition-all" />
-      <textarea placeholder="Message" className="p-5 rounded-2xl border border-black/5 bg-white focus:outline-none focus:border-accent col-span-full h-40 transition-all" />
+      <input type="text" placeholder="Name" className="p-5 rounded-2xl border border-black/10 bg-[#FDFDFD] focus:outline-none focus:border-accent transition-all" />
+      <input type="email" placeholder="Email" className="p-5 rounded-2xl border border-black/10 bg-[#FDFDFD] focus:outline-none focus:border-accent transition-all" />
+      <input type="tel" placeholder="Phone Number" className="p-5 rounded-2xl border border-black/10 bg-[#FDFDFD] focus:outline-none focus:border-accent col-span-full transition-all" />
+      <textarea placeholder="Message" className="p-5 rounded-2xl border border-black/10 bg-[#FDFDFD] focus:outline-none focus:border-accent col-span-full h-40 transition-all" />
       <button type="submit" className="px-10 py-5 bg-text-main text-white rounded-full font-medium hover:bg-accent transition-all duration-300 col-span-full shadow-lg">Send Message</button>
     </form>
   </section>

@@ -46,7 +46,7 @@ export default function Home() {
       <SearchFilters onFilter={handleFilter} />
 
       {/* Featured Projects */}
-      <section id="projects" className="py-24 px-8 max-w-7xl mx-auto">
+      <section id="projects" className="py-32 px-8 max-w-7xl mx-auto">
         <h2 className="text-5xl font-serif text-center mb-16">Featured Projects</h2>
         <div className="grid md:grid-cols-3 gap-8">
           {filteredProperties.map(property => (
@@ -63,7 +63,7 @@ export default function Home() {
       </section>
 
       {/* Categories */}
-      <section id="categories" className="py-32 px-8 my-12 max-w-7xl mx-auto bg-secondary-bg/30 rounded-[40px]">
+      <section id="categories" className="py-32 px-8 my-12 max-w-7xl mx-auto bg-[#FDFDFD] rounded-[40px] border border-black/5 shadow-sm">
         <h2 className="text-5xl font-serif text-center mb-16">Investment Categories</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <CategoryCard title="Residential Plots" icon={<HomeIcon className="text-accent" />} />
@@ -74,9 +74,10 @@ export default function Home() {
       </section>
 
       {/* Process */}
-      <section id="process" className="py-32 px-8 my-12 max-w-7xl mx-auto bg-secondary-bg/30 rounded-[40px]">
+      <section id="process" className="py-32 px-8 my-12 max-w-7xl mx-auto bg-[#FDFDFD] rounded-[40px] border border-black/5 shadow-sm">
         <h2 className="text-5xl font-serif text-center mb-16">Investment Process</h2>
-        <div className="flex flex-wrap justify-between gap-8">
+        <div className="relative flex flex-wrap justify-between gap-8">
+            <div className="absolute top-10 left-0 w-full h-[1px] bg-black/10 hidden md:block" />
             <ProcessStep number="01" title="Discover" />
             <ProcessStep number="02" title="Consultation" />
             <ProcessStep number="03" title="Property Visit" />
