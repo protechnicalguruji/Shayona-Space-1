@@ -1,9 +1,24 @@
 import { Navbar, PropertyCard, CategoryCard, ProcessStep } from '../components/Components';
+import { SearchFilters } from '../components/SearchFilters';
 import { motion } from 'motion/react';
-import { Home, TreeDeciduous, Building, Tag, Phone } from 'lucide-react';
+import { Home as HomeIcon, TreeDeciduous, Building, Tag, Phone, MessageCircle } from 'lucide-react';
 import { properties } from '../data';
+import { useState } from 'react';
 
 export default function Home() {
+  const [filteredProperties, setFilteredProperties] = useState(properties);
+
+  const handleFilter = (filters: { query: string, type: string }) => {
+    let filtered = properties;
+    if (filters.query) {
+      filtered = filtered.filter(p => p.title.toLowerCase().includes(filters.query.toLowerCase()));
+    }
+    if (filters.type !== 'All') {
+      filtered = filtered.filter(p => p.type === filters.type);
+    }
+    setFilteredProperties(filtered);
+  };
+
   return (
     <div className="min-h-screen bg-primary-bg">
       <Navbar />
@@ -28,11 +43,13 @@ export default function Home() {
         </motion.div>
       </section>
 
+      <SearchFilters onFilter={handleFilter} />
+
       {/* Featured Projects */}
       <section id="projects" className="py-24 px-8 max-w-7xl mx-auto">
         <h2 className="text-5xl font-serif text-center mb-16">Featured Projects</h2>
         <div className="grid md:grid-cols-3 gap-8">
-          {properties.map(property => (
+          {filteredProperties.map(property => (
             <PropertyCard 
               key={property.id}
               id={property.id}
@@ -49,7 +66,7 @@ export default function Home() {
       <section id="categories" className="py-24 px-8 max-w-7xl mx-auto bg-secondary-bg/30 rounded-3xl">
         <h2 className="text-5xl font-serif text-center mb-16">Investment Categories</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <CategoryCard title="Residential Plots" icon={<Home className="text-accent" />} />
+            <CategoryCard title="Residential Plots" icon={<HomeIcon className="text-accent" />} />
             <CategoryCard title="Weekend Villas" icon={<TreeDeciduous className="text-accent" />} />
             <CategoryCard title="New Launch" icon={<Building className="text-accent" />} />
             <CategoryCard title="Resale Deals" icon={<Tag className="text-accent" />} />
@@ -78,6 +95,16 @@ export default function Home() {
           </div>
           <p className="mt-8 text-text-secondary">7016251079 | Ahmedabad</p>
       </section>
+
+      {/* Floating CTA */}
+      <div className="fixed bottom-8 right-8 z-50 flex flex-col gap-4">
+        <button className="p-4 bg-[#25D366] text-white rounded-full shadow-lg">
+          <MessageCircle size={24} />
+        </button>
+        <button className="p-4 bg-accent text-white rounded-full shadow-lg">
+          <Phone size={24} />
+        </button>
+      </div>
     </div>
   );
 }

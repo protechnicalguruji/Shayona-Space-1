@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { ArrowRight, MapPin, CheckCircle, Phone, Mail, Map } from "lucide-react";
 import { Link } from "react-router-dom";
+import { ReactNode, Key } from "react";
 
 export const Navbar = () => (
   <nav className="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-8 py-6 bg-transparent">
@@ -18,7 +19,7 @@ export const Navbar = () => (
   </nav>
 );
 
-export const PropertyCard = ({ id, image, title, location, price }: { id: string, image: string, title: string, location: string, price: string }) => (
+export const PropertyCard = ({ id, image, title, location, price }: { key?: Key, id: string, image: string, title: string, location: string, price: string }) => (
   <motion.div
     whileHover={{ y: -10 }}
     className="bg-white rounded-3xl overflow-hidden shadow-sm border border-secondary-bg"
@@ -47,7 +48,7 @@ export const PropertyCard = ({ id, image, title, location, price }: { id: string
   </motion.div>
 );
 
-export const CategoryCard = ({ title, icon }: { title: string, icon: React.ReactNode }) => (
+export const CategoryCard = ({ title, icon }: { title: string, icon: ReactNode }) => (
   <motion.div 
     whileHover={{ backgroundColor: "#ECE4D8" }}
     className="bg-white p-8 rounded-3xl text-center border border-secondary-bg flex flex-col items-center gap-4 transition-all"
