@@ -47,7 +47,7 @@ export default function Home() {
 
       {/* Featured Projects */}
       <section id="projects" className="py-32 px-8 max-w-7xl mx-auto">
-        <h2 className="text-5xl font-serif text-center mb-16">Featured Projects</h2>
+        <h2 className="text-5xl md:text-6xl font-serif text-center mb-16 tracking-tight text-text-main">Featured Projects</h2>
         <div className="grid md:grid-cols-3 gap-8">
           {filteredProperties.map(property => (
             <PropertyCard 
